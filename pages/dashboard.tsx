@@ -12,7 +12,7 @@ const MainHeadStyle: CSSProperties = {
   color: 'rgb(76, 80, 91)',
   fontFamily: '"Roboto Slab", sans-serif',
   float: 'left',
-  padding: '14px 7px 21px',
+  padding: '14px 7px 7px',
   width: '100%'
 };
 
@@ -24,15 +24,13 @@ const LineSpacer: CSSProperties = {
 };
 
 
-
-
 export default function Dashboard() {
   return (
     <MainFormLayout>
         <MainFormContent>
           <MainLayout>
-             <Title style={MainHeadStyle}>We really like to have you here.</Title>
-             <TitleText style={LineSpacer}></TitleText>
+            <Title style={MainHeadStyle}>We really like to have you here.</Title>
+            <TitleText style={LineSpacer}></TitleText>
           </MainLayout>
         </MainFormContent>
     </MainFormLayout>
@@ -45,11 +43,9 @@ Dashboard.getInitialProps = () => {
 
 const MainFormLayout = styled(Layout)`
   width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
   background-color: red;
   padding: 5px;
 `;
