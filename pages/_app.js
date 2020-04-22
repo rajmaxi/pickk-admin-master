@@ -74,7 +74,7 @@ class PickkApp extends App {
     return (
       <>
         <Head>
-          <title>핔 스토어 어드민</title>
+          <title>Product Information Management</title>
         </Head>
         <Component {...pageProps} />
         <BackTop />
