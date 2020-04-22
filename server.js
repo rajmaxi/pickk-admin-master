@@ -1,6 +1,6 @@
 require("dotenv").config();
 const dev = process.env.NODE_ENV !== "production";
-const port = process.env.PORT;
+const port = '3000';
 
 const express = require("express");
 const { join } = require("path");
