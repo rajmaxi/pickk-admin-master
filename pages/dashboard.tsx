@@ -3,6 +3,7 @@ import MainLayout from '@src/components/templates/MainLayout';
 import {Layout, Typography} from 'antd';
 import styled from 'styled-components';
 import { TitleText } from '@src/components/organisms/Board/Filter/Header';
+import Space from '@src/components/atoms/space';
 
 const {Title, Text} = Typography;
 const {Content, Footer} = Layout;
@@ -33,6 +34,12 @@ export default function Dashboard() {
             <TitleText style={LineSpacer}></TitleText>
           </MainLayout>
         </MainFormContent>
+
+    <Wrapper>
+        <Text>test</Text>
+        <Space direction="ROW"/>
+        <Text>testing1</Text>
+    </Wrapper>
     </MainFormLayout>
   );
 }
@@ -56,4 +63,10 @@ const MainFormContent = styled(Content)`
   height: fit-content;
 `;
 
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+`;
 
