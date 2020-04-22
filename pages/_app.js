@@ -16,9 +16,9 @@ class PickkApp extends App {
       pageProps = await Component.getInitialProps(ctx);
     }
     if (typeof c.authtoken == 'undefined') {
-      if (ctx.pathname == '/login' || ctx.pathname == '/forgot-password')
+      if (ctx.pathname == '/dashboard' || ctx.pathname == '/forgot-password')
         return {pageProps};
-      else redirectTo('/login', {res: ctx.res, status: 301});
+      else redirectTo('/dashboard', {res: ctx.res, status: 301});
     } else {
       var response = await fetch(
         process.env.API_HOST + '/partner/token/verify/',
@@ -32,15 +32,15 @@ class PickkApp extends App {
         .then(status => {
           if (ctx.pathname == '/') {
             if (status === 200)
-              redirectTo('/items', {res: ctx.res, status: 301});
+              redirectTo('/dashboard', {res: ctx.res, status: 301});
             else {
               document.cookie =
-                'authtoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-              redirectTo('/login', {res: ctx.res, status: 301});
+                'authtoken=; expires=Thu, 22 Jan 1970 00:00:00 UTC; path=/;';
+              redirectTo('/dashboard', {res: ctx.res, status: 301});
             }
-          } else if (ctx.pathname == '/login') {
+          } else if (ctx.pathname == '/dashboard') {
             if (status === 200) {
-              redirectTo('/items', {res: ctx.res, status: 301});
+              redirectTo('/dashboard', {res: ctx.res, status: 301});
             } else
               return {
                 ...pageProps,
@@ -55,7 +55,7 @@ class PickkApp extends App {
             else {
               document.cookie =
                 'authtoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-              redirectTo('/login', {res: ctx.res, status: 301});
+              redirectTo('/dashboard', {res: ctx.res, status: 301});
             }
           }
         })
