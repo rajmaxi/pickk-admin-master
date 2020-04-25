@@ -36,8 +36,8 @@ const Wrapper = styled.div`
 const StyledContent = styled(Content)`
   margin: 24px 16px 0;
   overflow: initial;
-  padding: 24;
   text-align: center;
+  padding: 10px 20px;
 `;
 
 const StyledLayout = styled(Layout)`
